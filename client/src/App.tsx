@@ -9,7 +9,7 @@ import GoogleAds from "./components/googleAds";
 function App() {
   return (
     <>
-      <div class="flex flex-col min-h-screen bg-white text-gray-900 font-sans">
+      <div class="flex flex-col min-h-screen bg-white text-gray-900">
         <NavBar />
         <main class="flex-grow">
           <div class="max-w-7xl mx-auto py-3 px-1 sm:px-6 lg:px-8">
