@@ -39,29 +39,29 @@ const components = [
 
 export default function SuggestionSection() {
   return (
-    <div class="grid md:grid-cols-2 px-2 gap-3 md:gap-6 mb-10 text-gray-700">
+    <div class="grid lg:grid-cols-3 md:grid-cols-2 px-2 gap-3 md:gap-6 mb-10 text-gray-700">
       <For each={components}>
         {(component) => (
-          <div class="rounded-lg shadow-md overflow-hidden flex items-center border border-gray-200">
-            <div class="h-full w-2/5 rounded-sm border-r-2 border-gray-300">
+          <div class="rounded-lg shadow-md overflow-hidden flex items-center border border-gray-200 h-[165px]">
+            <div class="h-full w-2/5">
               <img
                 src={component.image}
                 alt={component.name}
                 class="h-full w-full object-contain rounded-lg transition duration-500 transform hover:scale-105"
               />
             </div>
-            <div class="w-3/5 h-full p-4 flex flex-col justify-evenly">
+            <div class="w-3/5 h-full p-2 flex flex-col justify-evenly">
               <div>
-                <h3 class="text-lg font-semibold mb-2 truncate whitespace-nowrap overflow-hidden">
+                <h3 class=" text-base font-semibold mb-2 truncate whitespace-nowrap overflow-hidden">
                   {component.name}
                 </h3>
                 <div class="flex justify-between">
-                  <p class="text-xl font-bold mb-4">
-                    Price: ${component.price}
+                  <p class=" text-xl font-bold mb-4">
+                   ${component.price}
                   </p>
-                  <div class="flex items-center text-base mb-4 mr-2">
+                  <div class="flex items-center text-base mr-2">
                     <svg
-                      class="w-7 h-7 text-yellow-400 mr-1 animate-pulse infinite"
+                      class="w-6 h-6 text-yellow-500 mr-1 animate-pulse infinite"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -71,15 +71,15 @@ export default function SuggestionSection() {
                   </div>
                 </div>
               </div>
-              <div class="flex space-x-2">
-                <button class="flex-1 border border-gray-300 py-2 px-4 rounded-md hover:bg-gray-100 transition-colors flex items-center justify-center">
-                  <img src={amazon} alt="" srcset="" />
+              <div class="flex space-x-1">
+                <button class="flex-1 border border-gray-300 rounded-md bg-zinc-100 hover:bg-white transition-colors flex items-center justify-center">
+                  <img src={amazon} class="h-5 w-h-5" alt="" srcset="" />
                 </button>
-                <button class="flex-1 border border-gray-300 py-2 px-4 rounded-md hover:bg-gray-100 transition-colors flex items-center justify-center">
-                  <img src={flipkart} alt="" srcset="" />
+                <button class="flex-1 border border-gray-300 rounded-md bg-zinc-100 hover:bg-white transition-colors flex items-center justify-center">
+                  <img src={flipkart} class="h-5 w-h-5" alt="" srcset="" />
                 </button>
-                <button class="border border-gray-300 p-2 rounded-md hover:bg-gray-100 transition-colors">
-                  <img src={shop} alt="" />
+                <button class="border border-gray-300 p-2 rounded-md bg-zinc-100 hover:bg-white transition-colors">
+                  <img src={shop} class="h-5 w-h-5" alt="" />
                 </button>
               </div>
             </div>

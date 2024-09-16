@@ -1,4 +1,4 @@
-import { createSignal, For, createEffect, onCleanup } from "solid-js";
+import { createSignal, For, createEffect, onCleanup, onMount } from "solid-js";
 
 type HeroSlide = {
   type: "hero";
@@ -13,6 +13,10 @@ type Slide = HeroSlide | SponsorSlide;
 
 const HeroCarousel = () => {
   const [currentSlide, setCurrentSlide] = createSignal(0);
+  const [touchStart, setTouchStart] = createSignal(0);
+  const [touchEnd, setTouchEnd] = createSignal(0);
+  let carouselRef: HTMLDivElement | undefined;
+
   const sponsorSlides: SponsorSlide[] = [
     {
       type: "sponsor",
@@ -33,16 +37,54 @@ const HeroCarousel = () => {
 
   const allSlides: Slide[] = [{ type: "hero" }, ...sponsorSlides];
 
+  const handleTouchStart = (e: TouchEvent) => {
+    setTouchStart(e.touches[0].clientX);
+  };
+
+  const handleTouchMove = (e: TouchEvent) => {
+    setTouchEnd(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStart() - touchEnd() > 75) {
+      // Swipe left
+      setCurrentSlide((prev) => (prev + 1) % allSlides.length);
+    }
+
+    if (touchStart() - touchEnd() < -75) {
+      // Swipe right
+      setCurrentSlide((prev) => (prev - 1 + allSlides.length) % allSlides.length);
+    }
+  };
+
+  onMount(() => {
+    if (carouselRef) {
+      carouselRef.addEventListener('touchstart', handleTouchStart, false);
+      carouselRef.addEventListener('touchmove', handleTouchMove, false);
+      carouselRef.addEventListener('touchend', handleTouchEnd, false);
+    }
+  });
+
+  onCleanup(() => {
+    if (carouselRef) {
+      carouselRef.removeEventListener('touchstart', handleTouchStart);
+      carouselRef.removeEventListener('touchmove', handleTouchMove);
+      carouselRef.removeEventListener('touchend', handleTouchEnd);
+    }
+  });
+
   createEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % sponsorSlides.length);
-    }, 3000);
+      setCurrentSlide((prev) => (prev + 1) % allSlides.length);
+    }, 5000);
 
     onCleanup(() => clearInterval(timer));
   });
+
   return (
     <div class="relative rounded-lg overflow-hidden mb-8">
       <div
+        ref={carouselRef}
         class="flex transition-transform duration-300 ease-in-out"
         style={`transform: translateX(-${currentSlide() * 100}%)`}
       >
