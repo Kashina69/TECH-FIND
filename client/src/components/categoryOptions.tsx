@@ -22,24 +22,23 @@ const categories = [
   },
 ];
 
-
 export default function CategoryOptions() {
-    const [selectedCategories, setSelectedCategories] = createSignal<string[]>(
-        []
-      );
-      const toggleCategory = (category: string) => {
-        setSelectedCategories((prev) => {
-          if (prev.includes(category)) {
-            return prev.filter((c) => c !== category);
-          } else if (prev.length < 2) {
-            return [...prev, category];
-          }
-          return prev;
-        });
-      };
+  const [selectedCategories, setSelectedCategories] = createSignal<string[]>(
+    []
+  );
+  const toggleCategory = (category: string) => {
+    setSelectedCategories((prev) => {
+      if (prev.includes(category)) {
+        return prev.filter((c) => c !== category);
+      } else if (prev.length < 2) {
+        return [...prev, category];
+      }
+      return prev;
+    });
+  };
   return (
     <>
-      <div class="grid md:grid-cols-3 grid-cols-2 gap-2 mb-4">
+      <div class="grid md:grid-cols-3 grid-cols-2 gap-2 mb-6">
         <For each={categories}>
           {(category) => (
             <div

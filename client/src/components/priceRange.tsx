@@ -54,9 +54,9 @@ export default function PriceRangeSlider() {
     document.addEventListener("touchend", handleEnd);
   };
   return (
-    <div class="w-full max-w-md mx-auto p-4 mb-7 px-6">
-      <div class="mb-6 ">
-        <div ref={rangeRef} class="relative h-0.5 bg-gray-500 rounded-full">
+    <div class="w-full mx-auto m p-4 mb-6 px-6 border-gray-300 border-[2px] bg-white rounded-lg shadow-md">
+      <div class="my-6 ">
+        <div ref={rangeRef} class="relative h-1 bg-gray-500 rounded-full">
           <div
             class="absolute h-full bg-black rounded-full"
             style={{
@@ -65,54 +65,59 @@ export default function PriceRangeSlider() {
             }}
           ></div>
           <div
-            class="absolute w-3 h-3 border-gray-600 border-[.1px] bg-white rounded-full shadow -mt-1.5 -ml-1.5 cursor-pointer"
+            class="absolute h-10 w-10 cursor-pointer"
             style={{ left: `${(minPrice() / 1000) * 100}%` }}
             onMouseDown={(e) => handleStart(e, true)}
             onTouchStart={(e) => handleStart(e, true)}
-          ></div>
+          >
+            <div class="w-4 h-4 border-gray-600 border-[.1px] bg-white rounded-full shadow -mt-[6px] -ml-1.5 "></div>
+          </div>
+
           <div
-            class="absolute w-3 h-3 border-gray-600 border-[.1px] bg-white rounded-full shadow -mt-1.5 -ml-1.5 cursor-pointer"
+            class="absolute h-10 w-10 cursor-pointer"
             style={{ left: `${(maxPrice() / 1000) * 100}%` }}
             onMouseDown={(e) => handleStart(e, false)}
             onTouchStart={(e) => handleStart(e, false)}
-          ></div>
+          >
+            <div class="w-4 h-4 border-gray-600 border-[.1px] bg-white rounded-full shadow -mt-[6px] -ml-1.5 "></div>
+          </div>
         </div>
       </div>
       <div class="flex justify-between">
         <div class="relative">
           <label
             for="min-price"
-            class="block text-sm font-medium text-gray-900 mb-1"
+            class="block text-lg font-medium text-gray-900 mb-1"
           >
             Min Price
           </label>
-          <span class="absolute inset-y-0 left-0 pl-3 pt-[1px] flex items-center pointer-events-none text-gray-700 mt-6">
-  $
-</span>
+          <span class="absolute inset-y-0 left-0 pl-3 pt-[1px] flex items-center pointer-events-none text-gray-700 mt-8">
+            $
+          </span>
           <input
             type="number"
             id="min-price"
             value={minPrice()}
             onInput={handleMinChange}
-            class="w-24 px-6 py-1 text-sm text-gray-500 rounded-full border border-gray-600 focus:outline-none focus:border-white bg-transparent"
+            class="w-24 px-6 py-1 text-base text-gray-500 rounded-md border border-gray-600 focus:outline-none focus:border-white bg-transparent"
           />
         </div>
         <div class="relative">
           <label
             for="max-price"
-            class="block text-sm font-medium text-gray-900 mb-1"
+            class="block text-lg font-medium text-gray-900 mb-1"
           >
             Max Price
           </label>
-          <span class="absolute inset-y-0 left-0 pl-3 pt-[1px] flex items-center pointer-events-none text-gray-700 mt-6">
-  $
-</span>
+          <span class="absolute inset-y-0 left-0 pl-3 pt-[1px] flex items-center pointer-events-none text-gray-700 mt-8">
+            $
+          </span>
           <input
             type="number"
             id="max-price"
             value={maxPrice()}
             onInput={handleMaxChange}
-            class="w-24 px-6 py-1 text-sm text-gray-500 rounded-full border border-gray-600 focus:outline-none focus:border-white bg-transparent"
+            class="w-24 px-6 py-1 text-base text-gray-500 rounded-md border border-gray-600 focus:outline-none focus:border-white bg-transparent"
           />
         </div>
       </div>
