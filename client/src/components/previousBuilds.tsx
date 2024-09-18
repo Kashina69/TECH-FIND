@@ -40,11 +40,12 @@ const previousBuilds = () => {
           <For each={previousBuildsList}>
             {(build) => (
               <div class="flex-none w-72 bg-white rounded-lg shadow-md overflow-hidden">
+                <div class="h-56 overflow-hidden">
                 <img
                   src={build.image}
                   alt={build.name}
-                  class="w-full h-48 object-cover"
-                />
+                  class="w-full h-56 object-cover duration-500 hover:scale-105"
+                /></div>
                 <div class="p-4">
                   <h3 class="text-lg font-semibold mb-2">{build.name}</h3>
                   <p class="text-2xl font-bold mb-4">${build.price}</p>

@@ -1,6 +1,6 @@
-import BuildButton from "./buildButton"
+import BuildButton from "./buildButton";
 import CategoryOptions from "./categoryOptions";
-import PriceRange from "./priceRange"
+import PriceRange from "./priceRangeName";
 
 export default function PriceCategorySelector() {
   return (
