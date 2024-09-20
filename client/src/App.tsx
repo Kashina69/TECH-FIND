@@ -1,11 +1,11 @@
-import NavBar from "./components/navBar";
+import NavBar from "./components/Nav/navBar";
 import AdsCarousel from "./components/adsCarousel";
-import PopularBuilds from "./components/popularBuilds";
-import PreviousBuilds from "./components/previousBuilds";
-import PriceAndCategorySelector from "./components/priceAndCetegorySelector";
-import SuggestionSection from "./components/suggestionSection"
-import Footer from "./components/footer";
-import GoogleAds from "./components/googleAds";
+import PopularBuilds from "./components/Builds/popularBuilds";
+import PreviousBuilds from "./components/Builds/previousBuilds";
+import PriceAndCategorySelector from "./components/Suggestion/priceAndCetegorySelector";
+import SuggestionSection from "./components/Suggestion/suggestionSection"
+import Footer from "./components/Bottom/footer";
+import GoogleAds from "./components/Bottom/googleAds";
 function App() {
   return (
     <>

@@ -1,4 +1,4 @@
-import logo from "../assets/techfind_logo.svg";
+import logo from "../../assets/techfind_logo.svg";
 import { createSignal, Show } from "solid-js";
 import AiChat from "./aiChat";
 const NavBar = () => {

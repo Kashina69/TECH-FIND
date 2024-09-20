@@ -1,5 +1,5 @@
 import { createSignal, For } from "solid-js";
-import asuna from "../assets/asuna.png";
+import asuna from "../../assets/asuna.png";
 type Message = {
   id: number;
   sender: string;

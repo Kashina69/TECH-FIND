@@ -1,9 +1,9 @@
 import { For } from "solid-js";
-import amazon from "../assets/amazon.svg";
-import flipkart from "../assets/flipkart.svg";
-import shop from "../assets/shop.svg";
-import externalLink from "../assets/externalLink.svg";
-import phoneCall from "../assets/phoneCall.svg";
+import amazon from "../../assets/amazon.svg";
+import flipkart from "../../assets/flipkart.svg";
+import shop from "../../assets/shop.svg";
+import externalLink from "../../assets/externalLink.svg";
+import phoneCall from "../../assets/phoneCall.svg";
 interface Component {
   name: string;
   image: string;
