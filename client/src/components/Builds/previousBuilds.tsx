@@ -35,20 +35,20 @@ const previousBuilds = () => {
     <>
       {/* Your Previous Builds Section */}
       <section class="mb-12">
-        <h2 class="text-2xl font-bold mb-6">Your Previous Builds</h2>
-        <div class="flex overflow-x-auto space-x-6 pb-4 scroll-container">
+        <h2 class="mb-6 font-bold text-2xl">Your Previous Builds</h2>
+        <div class="flex space-x-6 pb-4 overflow-x-auto scroll-container">
           <For each={previousBuildsList}>
             {(build) => (
-              <div class="flex-none w-72 bg-white rounded-lg shadow-md overflow-hidden">
+              <div class="flex-none bg-white dark:bg-[#1E1E1E] shadow-md rounded-lg w-72 overflow-hidden">
                 <div class="h-56 overflow-hidden">
                 <img
                   src={build.image}
                   alt={build.name}
-                  class="w-full h-56 object-cover duration-500 hover:scale-105"
+                  class="w-full h-56 duration-500 object-cover hover:scale-105"
                 /></div>
                 <div class="p-4">
-                  <h3 class="text-lg font-semibold mb-2">{build.name}</h3>
-                  <p class="text-2xl font-bold mb-4">${build.price}</p>
+                  <h3 class="mb-2 font-semibold text-lg">{build.name}</h3>
+                  <p class="mb-4 font-bold text-2xl">${build.price}</p>
                   <ul class="space-y-2 mb-4">
                     <li class="flex items-center">
                       <svg
@@ -61,7 +61,7 @@ const previousBuilds = () => {
                         stroke-width="2"
                         stroke-linecap="round"
                         stroke-linejoin="round"
-                        class="lucide lucide-chevron-right text-gray-500 mr-1"
+                        class="lucide-chevron-right mr-1 text-gray-500 lucide"
                       >
                         <path d="m9 18 6-6-6-6" />
                       </svg>
@@ -78,7 +78,7 @@ const previousBuilds = () => {
                         stroke-width="2"
                         stroke-linecap="round"
                         stroke-linejoin="round"
-                        class="lucide lucide-chevron-right text-gray-500 mr-1"
+                        class="lucide-chevron-right mr-1 text-gray-500 lucide"
                       >
                         <path d="m9 18 6-6-6-6" />
                       </svg>
@@ -95,14 +95,14 @@ const previousBuilds = () => {
                         stroke-width="2"
                         stroke-linecap="round"
                         stroke-linejoin="round"
-                        class="lucide lucide-chevron-right text-gray-500 mr-1"
+                        class="lucide-chevron-right mr-1 text-gray-500 lucide"
                       >
                         <path d="m9 18 6-6-6-6" />
                       </svg>
                       <span>RAM: {build.ram}</span>
                     </li>
                   </ul>
-                  <button class="w-full bg-gray-900 text-white px-4 py-2 rounded-md font-semibold hover:bg-gray-800 transition duration-300">
+                  <button class="bg-gray-900 dark:hover:bg-gray-300 hover:bg-gray-800 dark:bg-gray-200 px-4 py-2 rounded-md w-full font-semibold text-white dark:hover:text-gray-800 dark:text-gray-900 transition duration-300">
                     View Build
                   </button>
                 </div>

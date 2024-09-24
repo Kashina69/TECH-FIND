@@ -59,7 +59,7 @@ export default function ChatPage() {
   };
 
   return (
-    <div class="flex flex-col h-screen bg-white">
+    <div class="flex flex-col h-screen dark:bg-[#121212] bg-white">
       {/* Chat Header */}
       <div class="border-b border-gray-200 p-4 flex items-center justify-between mt-10">
         <div class="flex items-center space-x-4">

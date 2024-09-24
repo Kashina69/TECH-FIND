@@ -53,23 +53,25 @@ const HeroCarousel = () => {
 
     if (touchStart() - touchEnd() < -75) {
       // Swipe right
-      setCurrentSlide((prev) => (prev - 1 + allSlides.length) % allSlides.length);
+      setCurrentSlide(
+        (prev) => (prev - 1 + allSlides.length) % allSlides.length
+      );
     }
   };
 
   onMount(() => {
     if (carouselRef) {
-      carouselRef.addEventListener('touchstart', handleTouchStart, false);
-      carouselRef.addEventListener('touchmove', handleTouchMove, false);
-      carouselRef.addEventListener('touchend', handleTouchEnd, false);
+      carouselRef.addEventListener("touchstart", handleTouchStart, false);
+      carouselRef.addEventListener("touchmove", handleTouchMove, false);
+      carouselRef.addEventListener("touchend", handleTouchEnd, false);
     }
   });
 
   onCleanup(() => {
     if (carouselRef) {
-      carouselRef.removeEventListener('touchstart', handleTouchStart);
-      carouselRef.removeEventListener('touchmove', handleTouchMove);
-      carouselRef.removeEventListener('touchend', handleTouchEnd);
+      carouselRef.removeEventListener("touchstart", handleTouchStart);
+      carouselRef.removeEventListener("touchmove", handleTouchMove);
+      carouselRef.removeEventListener("touchend", handleTouchEnd);
     }
   });
 
@@ -82,7 +84,7 @@ const HeroCarousel = () => {
   });
 
   return (
-    <div class="relative rounded-lg overflow-hidden mb-8">
+    <div class="relative mb-8 rounded-lg overflow-hidden">
       <div
         ref={carouselRef}
         class="flex transition-transform duration-300 ease-in-out"
@@ -93,18 +95,18 @@ const HeroCarousel = () => {
             <div class="flex-shrink-0 w-full">
               {slide.type === "hero" ? (
                 <a href="#buildPc">
-                  <div class="relative md:h-[400px] h-56">
+                  <div class="relative h-56 md:h-[400px]">
                     <img
                       src="https://in-media.apjonlinecdn.com/magefan_blog/Your_Guide_to_Building_Your_Perfect_Gaming_Setup_at_Home.png"
                       alt="High-performance gaming PC"
                       class="w-full h-full object-cover"
                     />
-                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-                      <div class="text-center px-4">
-                        <h1 class="text-4xl font-bold text-white mb-3 select-none">
+                    <div class="absolute inset-0 flex justify-center items-center bg-black bg-opacity-50">
+                      <div class="px-4 text-center">
+                        <h1 class="mb-3 font-bold text-4xl text-white select-none">
                           Build Your Dream PC
                         </h1>
-                        <p class="text-l text-white mb-6 select-none">
+                        <p class="mb-6 text-l text-white select-none">
                           Customize, Compare, and Create the Perfect Setup
                         </p>
                       </div>
@@ -124,15 +126,15 @@ const HeroCarousel = () => {
           )}
         </For>
       </div>
-      <div class="absolute inset-x-0 bottom-0 flex justify-center p-4">
+      <div class="bottom-0 absolute inset-x-0 flex justify-center p-4">
         <div class="flex space-x-2">
           <For each={allSlides}>
             {(_, index) => (
               <button
                 class={`w-2 h-2 rounded-full ${
                   index() === currentSlide()
-                    ? "bg-white"
-                    : "bg-white opacity-50"
+                    ? "dark:bg-white bg-[#121212] "
+                    : "dark:bg-white opacity-50 bg-[#121212] "
                 }`}
                 onClick={() => setCurrentSlide(index())}
               />

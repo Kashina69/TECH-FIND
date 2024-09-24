@@ -55,21 +55,21 @@ const components: Component[] = [
 export default function SuggestionSection() {
   return (
     <div>
-      <h2 class="text-2xl font-bold mb-6">Our Suggestion</h2>
-      <div class="grid lg:grid-cols-2 px-1 gap-6 text-gray-700 mb-6">
+      <h2 class="mb-6 font-bold text-2xl">Our Suggestion</h2>
+      <div class="gap-6 grid lg:grid-cols-2 mb-6 px-1 text-gray-700 dark:text-gray-300">
         <For each={components}>
           {(component) => (
-            <div class="rounded-lg shadow-md overflow-hidden flex items-center border border-gray-200 ">
-              <div class="h-full w-2/6 p-3">
+            <div class="flex items-center border-gray-200 dark:border-gray-700 shadow-md border rounded-lg overflow-hidden">
+              <div class="p-3 w-2/6 h-full">
                 <img
                   src={component.image}
                   alt={component.name}
-                  class="h-full w-full object-contain rounded-lg transition duration-500 transform hover:scale-105"
+                  class="bg-white rounded-lg w-full h-full transform transition duration-500 object-contain hover:scale-105"
                 />
               </div>
-              <div class="w-4/6 h-full p-4 flex flex-col justify-evenly">
+              <div class="flex flex-col justify-evenly p-4 w-4/6 h-full">
                 <div>
-                  <h3 class="text-base font-semibold mb-2 truncate whitespace-nowrap overflow-hidden">
+                  <h3 class="mb-2 font-semibold text-base truncate whitespace-nowrap overflow-hidden">
                     {component.name}
                   </h3>
                 </div>
@@ -80,13 +80,13 @@ export default function SuggestionSection() {
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="flex items-center justify-between p-1 rounded-md bg-green-100 hover:bg-green-200 transition-colors"
+                    class="flex justify-between items-center bg-green-100 hover:bg-green-200 p-1 rounded-md transition-colors"
                   >
-                    <div class="flex items-center ">
-                      <img src={amazon} class="h-4 w-4 mr-2" alt="Amazon" />
-                      <span class="text-sm font-medium">Amazon</span>
+                    <div class="flex items-center">
+                      <img src={amazon} class="mr-2 w-4 h-4" alt="Amazon" />
+                      <span class="font-medium text-sm dark:text-gray-700">Amazon</span>
                       <div class="flex items-center ml-2">
-                        <span class="text-sm">{component.amazonRating}</span>
+                        <span class="text-sm dark:text-gray-700">{component.amazonRating}</span>
                         <svg
                           class="w-4 h-4 text-yellow-500"
                           fill="currentColor"
@@ -96,9 +96,9 @@ export default function SuggestionSection() {
                         </svg>
                       </div>
                     </div>
-                    <span class="flex text-sm font-bold text-green-700">
+                    <span class="flex font-bold text-green-700 text-sm">
                       ${component.amazonPrice}
-                      <img src={externalLink} class="h-4 w-4 ml-2" alt="" />
+                      <img src={externalLink} class="ml-2 w-4 h-4" alt="" />
                     </span>
                   </a>
                   <a
@@ -107,13 +107,13 @@ export default function SuggestionSection() {
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="flex items-center justify-between p-1 rounded-md bg-zinc-100 hover:bg-zinc-200 transition-colors"
+                    class="flex justify-between items-center bg-zinc-100 hover:bg-zinc-200 p-1 rounded-md transition-colors"
                   >
                     <div class="flex items-center">
-                      <img src={flipkart} class="h-4 w-4 mr-2" alt="Flipkart" />
-                      <span class="text-sm font-medium">Flipkart</span>
+                      <img src={flipkart} class="mr-2 w-4 h-4" alt="Flipkart" />
+                      <span class="font-medium text-sm dark:text-gray-700">Flipkart</span>
                       <div class="flex items-center ml-[.67rem]">
-                        <span class="text-sm">{component.flipkartRating}</span>
+                        <span class="text-sm dark:text-gray-700">{component.flipkartRating}</span>
                         <svg
                           class="w-4 h-4 text-yellow-500"
                           fill="currentColor"
@@ -123,31 +123,31 @@ export default function SuggestionSection() {
                         </svg>
                       </div>
                     </div>
-                    <span class="flex text-sm font-bold">
+                    <span class="flex font-bold text-sm dark:text-gray-700">
                       ${component.flipkartPrice}
-                      <img src={externalLink} class="h-4 w-4 ml-2" alt="" />
+                      <img src={externalLink} class="ml-2 w-4 h-4" alt="" />
                     </span>
                   </a>
                   <button
                     onClick={() => alert(`Call for local shop pricing`)}
-                    class="w-full flex items-center justify-between p-1 rounded-md bg-blue-100 hover:bg-blue-200 transition-colors "
+                    class="flex justify-between items-center bg-blue-100 hover:bg-blue-200 p-1 rounded-md w-full transition-colors"
                   >
                     <div class="flex items-center">
                       <img
                         src={shop}
-                        class="h-4 w-4 mr-2 ml-[.12rem]"
+                        class="mr-2 ml-[.12rem] w-4 h-4"
                         alt="Local Shop"
                       />
-                      <span class="text-sm font-medium truncate whitespace-nowrap overflow-hidden ">
+                      <span class="font-medium text-sm dark:text-gray-700 truncate whitespace-nowrap overflow-hidden">
                         Local Shop
                       </span>
                     </div>
                     <div class="flex items-center">
                       {/* {productData.localShopNumber} */}
-                      <span class="text-sm text-gray-600">+1234567890</span>
+                      <span class="text-gray-600 text-sm truncate whitespace-nowrap overflow-hidden">+1234567890</span>
                       <img
                         src={phoneCall}
-                        class="w-4 h-4 ml-2"
+                        class="ml-2 w-4 h-4"
                         alt=""
                         srcset=""
                       />
@@ -159,18 +159,18 @@ export default function SuggestionSection() {
           )}
         </For>
       </div>
-      <div class="md:grid flex flex-col grid-cols-3 justify-center items-center mx-auto gap-3 mb-12">
+      <div class="flex flex-col justify-center items-center gap-3 md:grid grid-cols-3 mx-auto mb-12">
         <a
           href={`https://amazon.com/s?k=${encodeURIComponent("Add to cart")}`}
           target="_blank"
           rel="noopener noreferrer"
-          class="w-full flex items-center justify-between p-4 rounded-md bg-green-100 hover:bg-green-200 transition-colors"
+          class="flex justify-between items-center bg-green-100 hover:bg-green-200 p-4 rounded-md w-full transition-colors"
         >
-          <div class="flex items-center ">
-            <img src={amazon} class="h-4 w-4 mr-2" alt="Amazon" />
-            <span class="text-sm font-medium">Amazon</span>
+          <div class="flex items-center">
+            <img src={amazon} class="mr-2 w-4 h-4" alt="Amazon" />
+            <span class="font-medium text-sm dark:text-gray-700">Amazon</span>
             <div class="flex items-center ml-2">
-              <span class="text-sm">{4.3}</span>
+              <span class="text-sm dark:text-gray-700">{4.3}</span>
               <svg
                 class="w-4 h-4 text-yellow-500"
                 fill="currentColor"
@@ -180,9 +180,9 @@ export default function SuggestionSection() {
               </svg>
             </div>
           </div>
-          <span class="flex text-sm font-bold text-green-700">
+          <span class="flex font-bold text-green-700 text-sm">
             ${"978"}
-            <img src={externalLink} class="h-4 w-4 ml-2" alt="" />
+            <img src={externalLink} class="ml-2 w-4 h-4" alt="" />
           </span>
         </a>
         <a
@@ -191,13 +191,13 @@ export default function SuggestionSection() {
           )}`}
           target="_blank"
           rel="noopener noreferrer"
-          class="w-full flex items-center justify-between p-4 rounded-md bg-zinc-100 hover:bg-zinc-200 transition-colors"
+          class="flex justify-between items-center bg-zinc-100 hover:bg-zinc-200 p-4 rounded-md w-full transition-colors"
         >
           <div class="flex items-center">
-            <img src={flipkart} class="h-4 w-4 mr-2" alt="Flipkart" />
-            <span class="text-sm font-medium">Flipkart</span>
+            <img src={flipkart} class="mr-2 w-4 h-4" alt="Flipkart" />
+            <span class="font-medium text-sm dark:text-gray-700">Flipkart</span>
             <div class="flex items-center ml-[.67rem]">
-              <span class="text-sm">{4.7}</span>
+              <span class="text-sm dark:text-gray-700">{4.7}</span>
               <svg
                 class="w-4 h-4 text-yellow-500"
                 fill="currentColor"
@@ -207,25 +207,25 @@ export default function SuggestionSection() {
               </svg>
             </div>
           </div>
-          <span class="flex text-sm font-bold">
+          <span class="flex font-bold text-sm dark:text-gray-700">
             ${"1000"}
-            <img src={externalLink} class="h-4 w-4 ml-2" alt="" />
+            <img src={externalLink} class="ml-2 w-4 h-4" alt="" />
           </span>
         </a>
         <button
           onClick={() => alert(`Call for local shop pricing`)}
-          class="w-full flex items-center justify-between p-4 rounded-md bg-blue-100 hover:bg-blue-200 transition-colors "
+          class="flex justify-between items-center bg-blue-100 hover:bg-blue-200 p-4 rounded-md w-full transition-colors"
         >
           <div class="flex items-center">
-            <img src={shop} class="h-4 w-4 mr-2 ml-[.12rem]" alt="Local Shop" />
-            <span class="text-sm font-medium ml-[.1rem] truncate whitespace-nowrap overflow-hidden ">
+            <img src={shop} class="mr-2 ml-[.12rem] w-4 h-4" alt="Local Shop" />
+            <span class="ml-[.1rem] font-medium text-sm dark:text-gray-700 truncate whitespace-nowrap overflow-hidden">
               Local Shop
             </span>
           </div>
           <div class="flex items-center">
             {/* {productData.localShopNumber} */}
-            <span class="text-sm text-gray-600">+1234567890</span>
-            <img src={phoneCall} class="w-4 h-4 ml-2" alt="" srcset="" />
+            <span class="text-gray-600 text-sm">+1234567890</span>
+            <img src={phoneCall} class="ml-2 w-4 h-4" alt="" srcset="" />
           </div>
         </button>
       </div>

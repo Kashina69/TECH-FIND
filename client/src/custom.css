@@ -49,3 +49,9 @@ html {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+@media (prefers-color-scheme: dark) {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #222222 #121212;
+  }
+}

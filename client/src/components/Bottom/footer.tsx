@@ -1,18 +1,18 @@
 const footer = () => {
   return (
     <>
-      <footer class="bg-gray-100">
+      <footer class="dark:bg-[#121212] bg-gray-100">
         <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8 ">
             <div>
-              <h3 class="text-sm font-semibold text-gray-600 tracking-wider uppercase mb-4">
+              <h3 class="text-sm font-semibold dark:text-white text-gray-600 tracking-wider uppercase mb-4">
                 Product
               </h3>
               <ul class="space-y-4">
                 <li>
                   <a
                     href="#"
-                    class="text-base text-gray-500 hover:text-gray-900"
+                    class="text-base dark:text-gray-300 text-gray-500 hover:text-gray-900"
                   >
                     Builds
                   </a>
@@ -20,7 +20,7 @@ const footer = () => {
                 <li>
                   <a
                     href="#"
-                    class="text-base text-gray-500 hover:text-gray-900"
+                    class="text-base dark:text-gray-300 text-gray-500 hover:text-gray-900"
                   >
                     Components
                   </a>
@@ -28,7 +28,7 @@ const footer = () => {
                 <li>
                   <a
                     href="#"
-                    class="text-base text-gray-500 hover:text-gray-900"
+                    class="text-base dark:text-gray-300 text-gray-500 hover:text-gray-900"
                   >
                     Pricing
                   </a>
@@ -36,14 +36,14 @@ const footer = () => {
               </ul>
             </div>
             <div>
-              <h3 class="text-sm font-semibold text-gray-600 tracking-wider uppercase mb-4">
+              <h3 class="text-sm font-semibold dark:text-white text-gray-600 tracking-wider uppercase mb-4">
                 Company
               </h3>
               <ul class="space-y-4">
                 <li>
                   <a
                     href="#"
-                    class="text-base text-gray-500 hover:text-gray-900"
+                    class="text-base dark:text-gray-300 text-gray-500 hover:text-gray-900"
                   >
                     About
                   </a>
@@ -51,7 +51,7 @@ const footer = () => {
                 <li>
                   <a
                     href="#"
-                    class="text-base text-gray-500 hover:text-gray-900"
+                    class="text-base dark:text-gray-300 text-gray-500 hover:text-gray-900"
                   >
                     Blog
                   </a>
@@ -59,7 +59,7 @@ const footer = () => {
                 <li>
                   <a
                     href="#"
-                    class="text-base text-gray-500 hover:text-gray-900"
+                    class="text-base dark:text-gray-300 text-gray-500 hover:text-gray-900"
                   >
                     Careers
                   </a>
@@ -67,14 +67,14 @@ const footer = () => {
               </ul>
             </div>
             <div>
-              <h3 class="text-sm font-semibold text-gray-600 tracking-wider uppercase mb-4">
+              <h3 class="text-sm font-semibold dark:text-white text-gray-600 tracking-wider uppercase mb-4">
                 Support
               </h3>
               <ul class="space-y-4">
                 <li>
                   <a
                     href="#"
-                    class="text-base text-gray-500 hover:text-gray-900"
+                    class="text-base dark:text-gray-300 text-gray-500 hover:text-gray-900"
                   >
                     Help Center
                   </a>
@@ -82,7 +82,7 @@ const footer = () => {
                 <li>
                   <a
                     href="#"
-                    class="text-base text-gray-500 hover:text-gray-900"
+                    class="text-base dark:text-gray-300 text-gray-500 hover:text-gray-900"
                   >
                     Contact Us
                   </a>
@@ -90,7 +90,7 @@ const footer = () => {
                 <li>
                   <a
                     href="#"
-                    class="text-base text-gray-500 hover:text-gray-900"
+                    class="text-base dark:text-gray-300 text-gray-500 hover:text-gray-900"
                   >
                     Privacy Policy
                   </a>
@@ -98,14 +98,14 @@ const footer = () => {
               </ul>
             </div>
             <div>
-              <h3 class="text-sm font-semibold text-gray-600 tracking-wider uppercase mb-4">
+              <h3 class="text-sm font-semibold dark:text-white text-gray-600 tracking-wider uppercase mb-4">
                 Stay Connected
               </h3>
               <ul class="space-y-4">
                 <li>
                   <a
                     href="#"
-                    class="text-base text-gray-500 hover:text-gray-900"
+                    class="text-base dark:text-gray-300 text-gray-500 hover:text-gray-900"
                   >
                     Twitter
                   </a>
@@ -113,7 +113,7 @@ const footer = () => {
                 <li>
                   <a
                     href="#"
-                    class="text-base text-gray-500 hover:text-gray-900"
+                    class="text-base dark:text-gray-300 text-gray-500 hover:text-gray-900"
                   >
                     Facebook
                   </a>
@@ -121,7 +121,7 @@ const footer = () => {
                 <li>
                   <a
                     href="#"
-                    class="text-base text-gray-500 hover:text-gray-900"
+                    class="text-base dark:text-gray-300 text-gray-500 hover:text-gray-900"
                   >
                     Instagram
                   </a>
@@ -173,7 +173,7 @@ const footer = () => {
                 </svg>
               </a>
             </div>
-            <p class="mt-8 text-base text-gray-400 md:mt-0 md:order-1">
+            <p class="mt-8 text-base dark:text-gray-300 text-gray-400 md:mt-0 md:order-1">
               &copy; 2024 Tech Find, Inc. All rights reserved.
             </p>
           </div>

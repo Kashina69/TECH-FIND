@@ -54,39 +54,42 @@ export default function PriceRangeSlider() {
     document.addEventListener("touchend", handleEnd);
   };
   return (
-    <div class="w-full mx-auto">
+    <div class="mx-auto w-full">
       <input
         type="text"
         id="buildName"
         placeholder="Build Name"
-        class="w-full px-2 py-2 text-base border-gray-300 border-[2px] rounded-lg shadow-md mb-6 text-gray-500 focus:outline-none focus:border-white bg-transparent"
+        class="border-[1px] border-gray-300 focus:border-white dark:border-gray-700 bg-transparent shadow-md mb-6 px-2 py-2 rounded-md w-full text-base text-gray-500 dark:text-white focus:outline-none"
       />
-      <div class="w-full mx-auto p-4 mb-6 px-6 border-gray-300 border-[2px] bg-white rounded-lg shadow-md">
-        <div class="my-6 ">
-          <div ref={rangeRef} class="relative h-1 bg-gray-500 rounded-full">
+      <div class="border-[1px] border-gray-300 dark:border-gray-700 bg-white dark:bg-[#121212] shadow-md mx-auto mb-6 px-6 p-4 rounded-md w-full">
+        <div class="my-6">
+          <div
+            ref={rangeRef}
+            class="relative bg-gray-500 dark:bg-gray-300 rounded-full h-1"
+          >
             <div
-              class="absolute h-full bg-black rounded-full"
+              class="absolute bg-black dark:bg-white rounded-full h-full"
               style={{
                 left: `${(minPrice() / 1000) * 100}%`,
                 right: `${100 - (maxPrice() / 1000) * 100}%`,
               }}
             ></div>
             <div
-              class="absolute h-10 w-10 cursor-pointer"
+              class="absolute w-10 h-10 cursor-pointer"
               style={{ left: `${(minPrice() / 1000) * 100}%` }}
               onMouseDown={(e) => handleStart(e, true)}
               onTouchStart={(e) => handleStart(e, true)}
             >
-              <div class="w-4 h-4 border-gray-600 border-[.1px] bg-white rounded-full shadow -mt-[6px] -ml-1.5 "></div>
+              <div class="border-[.1px] border-gray-600 bg-white shadow -mt-[6px] -ml-1.5 rounded-full w-4 h-4"></div>
             </div>
 
             <div
-              class="absolute h-10 w-10 cursor-pointer"
+              class="absolute w-10 h-10 cursor-pointer"
               style={{ left: `${(maxPrice() / 1000) * 100}%` }}
               onMouseDown={(e) => handleStart(e, false)}
               onTouchStart={(e) => handleStart(e, false)}
             >
-              <div class="w-4 h-4 border-gray-600 border-[.1px] bg-white rounded-full shadow -mt-[6px] -ml-1.5 "></div>
+              <div class="border-[.1px] border-gray-600 bg-white shadow -mt-[6px] -ml-1.5 rounded-full w-4 h-4"></div>
             </div>
           </div>
         </div>
@@ -94,11 +97,11 @@ export default function PriceRangeSlider() {
           <div class="relative">
             <label
               for="min-price"
-              class="block text-lg font-medium text-gray-900 mb-1"
+              class="block mb-1 font-medium text-gray-900 text-lg dark:text-gray-200"
             >
               Min Price
             </label>
-            <span class="absolute inset-y-0 left-0 pl-3 pt-[1px] flex items-center pointer-events-none text-gray-700 mt-[1.9rem]">
+            <span class="left-0 absolute inset-y-0 flex items-center mt-[1.9rem] pt-[1px] pl-3 text-gray-700 dark:text-gray-200 pointer-events-none">
               $
             </span>
             <input
@@ -106,17 +109,17 @@ export default function PriceRangeSlider() {
               id="min-price"
               value={minPrice()}
               onInput={handleMinChange}
-              class="w-24 px-6 py-1 text-base text-gray-500 rounded-md border border-gray-600 focus:outline-none focus:border-white bg-transparent"
+              class="border-gray-600 focus:border-white bg-transparent px-6 py-1 border rounded-md w-24 text-base text-gray-500 dark:text-gray-200 focus:outline-none"
             />
           </div>
           <div class="relative">
             <label
               for="max-price"
-              class="block text-lg font-medium text-gray-900 mb-1"
+              class="block mb-1 font-medium text-gray-900 text-lg dark:text-gray-200"
             >
               Max Price
             </label>
-            <span class="absolute inset-y-0 left-0 pl-3 pt-[1px] flex items-center pointer-events-none text-gray-700 mt-[1.9rem]">
+            <span class="left-0 absolute inset-y-0 flex items-center mt-[1.9rem] pt-[1px] pl-3 text-gray-700 dark:text-gray-200 pointer-events-none">
               $
             </span>
             <input
@@ -124,7 +127,7 @@ export default function PriceRangeSlider() {
               id="max-price"
               value={maxPrice()}
               onInput={handleMaxChange}
-              class="w-24 px-6 py-1 text-base text-gray-500 rounded-md border border-gray-600 focus:outline-none focus:border-white bg-transparent"
+              class="border-gray-600 focus:border-white bg-transparent px-6 py-1 border rounded-md w-24 text-base text-gray-500 dark:text-gray-200 focus:outline-none"
             />
           </div>
         </div>
